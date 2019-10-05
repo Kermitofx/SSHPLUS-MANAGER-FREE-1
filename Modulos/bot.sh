@@ -4,6 +4,7 @@
 source ShellBot.sh
 api_bot=$1
 id_admin=$2
+id_admin=$3
 [[ -z $api_bot ]] && exit 0
 [[ -z $id_admin ]] && exit 0
 ShellBot.init --token "$api_bot" --monitor --return map --flush
