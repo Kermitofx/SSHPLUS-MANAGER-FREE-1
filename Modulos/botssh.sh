@@ -3,10 +3,12 @@ clear
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
+comando[2]="$3"
  (
 [[ -e $HOME/fim ]] && rm $HOME/fim
 ${comando[0]} -y > /dev/null 2>&1
 ${comando[1]} -y > /dev/null 2>&1
+${comando[2]} -y > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
@@ -34,6 +36,8 @@ fun_botOnOff () {
           echo -ne "\033[1;32mINFORME SEU TOKEN:\033[1;37m "; read tokenbot
   	    echo ""
   	    echo -ne "\033[1;32mINFORME SEU ID:\033[1;37m "; read iduser
+            echo ""
+            echo -ne "\033[1;32mO ID DO SEGUNDO ADM:\033[1;37m "; read iduser
           clear
           echo -e "\033[1;32mINICIANDO BOT SSHPLUS \033[0m\n"
           fun_bot1 () {
